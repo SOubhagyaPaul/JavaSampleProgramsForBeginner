@@ -1,0 +1,30 @@
+Introduction to Java
+1. Given a list of marks (ranging from 0 to 100) of n (user input) students, write a program to print the number of students who have obtain marks:
+(a) in the range 81 to 100 (b) in the range 61 to 80
+(c) in the range 41 to 60 (d) in the range 0 to 40
+2. Admission to a professional course is subject to the following conditions:
+(a) marks in Mathematics >= 60 (b) marks in Physics >=50
+(c) marks in Chemistry >=40 (d) Total in all 3 subjects >=200
+(Or)
+Total in Maths & Physics>=150
+Given the marks in the 3 subjects of n (user input) students, write a program to process
+the applications to list the eligible candidates.
+3. Write a program to evaluate, the following investment equation: V=P ( 1 + r )n
+and print the tables which would give the values of V for various combinations of the following values of P, r & n.
+P : 1000,2000,3000,………..,10,000 R : 0.10,0.11,0.12,…………….0.20
+n : 1,2,3,…………………………,10
+4. The formula for resistors connected in parallel is a little more complex. Given two resistors with resistances R1 and R2 connected in parallel the equivalent resistance is given by the inverse of the sum of the inverses, i.e. * If there are more than two resistors you continue to invert the sum of their inverses; e.g. for four resistors you have: * Write a program that calculates the resistance of a group of resistors arranged in parallel.
+5. The straight-line method of computing the early depreciation of the value of an item is given by:
+Depreciation = Purchase price - Salvage value
+Years of service
+Write a program to determine the salvage value of an item when the purchase price years of service & the annual preciation is given.
+6. For a certain electrical circuit with an inductance L and resistance R, the damped natural
+frequency is given by:
+Frequency = √ [( 1 / LC ) – ( R2/4C2 )]
+It is desired to study the variations of the frequency with C (capacitance). Write a program to calculate the frequency of difference values of C starting 0.01 to 0.1 in steps of 0.01.
+7. Given are two one-dimensional arrays A & B, which are sorted in ascending order. Write a program to merge them into single sorted array C that contains every item from arrays. A & B, in ascending order.
+8. An election is contested by 5 candidates. The candidates are numbered 1-5 and the voting is done by marking the candidate number on the ballot paper. Write a program to read the
+ballots and count the votes casts for each candidate using an array variable count. In case, a number read is outside the range 1 – 5, the ballot should be considered as a ‘spoilt ballot’ and the program should also count the number of spoilt ballot.
+9. Write a program to find the elements, a [i, j] in a two-dimensional array which are maximum element to the ith row and jth column.
+10. A company has four salespeople (1 to 4) who sell five different products (1 to 5). Once a day, each salesperson passes in a slip for each different type of product sold. Each slip contains: * The salesperson number * The product number * The total dollar value of that product sold that day
+Thus, each salesperson passes in between 0 and 5 sales slips per day. Assume that the information from all of the slips for last month is available. Write a program that will read all this information for last month’s sales and summarize the total sales by salesperson by product. All totals should be stored in the double-subscripted array sales. After processing all the information for last month, print the results in tabular format with each of the columns represent a particular salesperson and each of the rows representing a particular product. Cross total each row to get the total sales of each product for last month, and cross total each column to get the total sales by salesperson for last month. Your tabular printout should include these cross totals to the right of the totaled rows and to the bottom of the totaled columns.
