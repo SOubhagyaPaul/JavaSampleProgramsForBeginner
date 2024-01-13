@@ -1,0 +1,230 @@
+package day2;
+
+import java.util.Scanner;
+
+/*
+ * Create a class Queue to implement queue data structure with constructors. Define suitable
+methods for insertion & deletion of elements to & from the queue. Write a program for this,
+clearly specifying the overflow & underflow conditions.
+*/
+
+
+
+class Queue1{
+	int front,rear,size;
+	int arr[];
+	Queue1(int size){
+		this.size=size;
+		front=-1;
+		rear=-1;
+		arr=new int[size];
+	}
+	boolean isEmpty()
+	{
+		return front == -1;
+	}
+
+	boolean isFull()
+	{
+		return (front == 0 && rear == size-1);
+	}	
+	
+	
+	void Enqueue(int n) {
+		if(isFull()) {
+			System.out.println("Queue is in Overflow condition ");
+			return;
+		}
+		else if(isEmpty()) {
+			front=0;
+			rear=0;
+		}
+		else
+			rear++;
+		arr[rear]=n;
+	}
+	int deQueue() {
+		int element;
+	    if (isEmpty()) {
+	      System.out.println("Queue is in Underflow condition");
+	      return 0;
+	    } else {
+	      element = arr[front];
+	      if (front >= rear) {
+	        front = -1;
+	        rear = -1;
+	      } // Q has one element, so we reset the queue after deleting.
+	      else {
+	        front++;
+	      }
+	      return (element);
+	    }
+	  }
+	void display() {
+		 if (isEmpty()) {
+		      System.out.println("Queue is in underflow condition");
+		    } 
+		 else {
+		      System.out.println("\nThe Queue view in FIFO order: ");
+		      for (int i = front; i <= rear; i++)
+		        System.out.print(arr[i] + "  ");
+		    }
+	}
+	
+}
+
+public class prblm2 {
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter the size of Queue : ");
+		int n=sc.nextInt();
+		Queue1 s1=new Queue1(n);
+		int x=0;
+		while(true)
+		{
+			if(x==1)
+				break;
+			System.out.println("Enter 1 for Enqueue   ");
+			System.out.println("Enter 2 for Dequeue   ");
+			System.out.println("Enter 3 to display   ");
+			System.out.println("Enter 4 to stop   ");
+			
+			int ch= sc.nextInt();
+			switch(ch){
+			case 1: {
+				System.out.println("Enter value for Enqueue:  ");
+				int p=sc.nextInt();
+				s1.Enqueue(p);
+				break;
+			}
+				
+			case 2:{
+				System.out.println("Dequeue item->  ");
+				System.out.print(" \t"+s1.deQueue());
+				break;
+			}
+			case 3:{
+				s1.display();
+				
+				break;
+			}
+			case 4:
+				x=1;
+				break;
+
+			}
+		}
+		sc.close();
+
+	}
+
+}
+
+
+
+/*
+ * Enter the size of Queue : 
+4
+Enter 1 for Enqueue   
+Enter 2 for Dequeue   
+Enter 3 to display   
+Enter 4 to stop   
+1
+Enter value for Enqueue:  
+12
+Enter 1 for Enqueue   
+Enter 2 for Dequeue   
+Enter 3 to display   
+Enter 4 to stop   
+1
+Enter value for Enqueue:  
+14
+Enter 1 for Enqueue   
+Enter 2 for Dequeue   
+Enter 3 to display   
+Enter 4 to stop   
+1
+Enter value for Enqueue:  
+6
+Enter 1 for Enqueue   
+Enter 2 for Dequeue   
+Enter 3 to display   
+Enter 4 to stop   
+1
+Enter value for Enqueue:  
+87
+Enter 1 for Enqueue   
+Enter 2 for Dequeue   
+Enter 3 to display   
+Enter 4 to stop   
+1
+Enter value for Enqueue:  
+76
+Queue is in Overflow condition 
+Enter 1 for Enqueue   
+Enter 2 for Dequeue   
+Enter 3 to display   
+Enter 4 to stop   
+3
+
+The Queue view in FIFO order: 
+12  14  6  87  Enter 1 for Enqueue   
+Enter 2 for Dequeue   
+Enter 3 to display   
+Enter 4 to stop   
+2
+Dequeue item->  
+ 	12Enter 1 for Enqueue   
+Enter 2 for Dequeue   
+Enter 3 to display   
+Enter 4 to stop   
+2
+Dequeue item->  
+ 	14Enter 1 for Enqueue   
+Enter 2 for Dequeue   
+Enter 3 to display   
+Enter 4 to stop   
+3
+
+The Queue view in FIFO order: 
+6  87  Enter 1 for Enqueue   
+Enter 2 for Dequeue   
+Enter 3 to display   
+Enter 4 to stop   
+2
+Dequeue item->  
+ 	6Enter 1 for Enqueue   
+Enter 2 for Dequeue   
+Enter 3 to display   
+Enter 4 to stop   
+2
+Dequeue item->  
+ 	87Enter 1 for Enqueue   
+Enter 2 for Dequeue   
+Enter 3 to display   
+Enter 4 to stop   
+2
+Dequeue item->  
+Queue is in Underflow condition
+ 	0Enter 1 for Enqueue   
+Enter 2 for Dequeue   
+Enter 3 to display   
+Enter 4 to stop   
+1
+Enter value for Enqueue:  
+54
+Enter 1 for Enqueue   
+Enter 2 for Dequeue   
+Enter 3 to display   
+Enter 4 to stop   
+3
+
+The Queue view in FIFO order: 
+54  Enter 1 for Enqueue   
+Enter 2 for Dequeue   
+Enter 3 to display   
+Enter 4 to stop   
+4
+
+ */
