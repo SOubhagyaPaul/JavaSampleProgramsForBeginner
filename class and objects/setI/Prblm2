@@ -73,7 +73,7 @@ class Queue1{
 	
 }
 
-public class prblm2 {
+public class Prblm2 {
 
 	public static void main(String[] args) {
 		Scanner sc= new Scanner(System.in);
