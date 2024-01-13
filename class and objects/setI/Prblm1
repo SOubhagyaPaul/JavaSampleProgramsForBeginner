@@ -1,0 +1,229 @@
+package day2;
+
+import java.util.Scanner;
+/*Create a class Stack that declares a stack and the methods to perform push ( ), pop ( ) and
+display( ) operations on the stack. Create two stacks and write a menu-driven program to
+perform operations on the two stacks. Whenever the number of elements in the two stacks
+becomes equal, a message should automatically be generated displaying the number of elements
+in each stack.*/
+class stack1{
+	int size;
+	int top;
+	int arr[];
+	stack1(int size)
+	{
+		top=-1;
+		this.size=size;
+		arr= new int[size];
+	}
+	boolean isFull(){
+		return top==size-1;
+	}
+	boolean isEmpty(){
+		return top==-1;
+			
+	}
+	public void push(int n){
+		if(isFull()){
+			
+			System.out.println("The stsack is full.");
+			return;
+		}
+		else{
+			arr[++top]=n;
+		}
+	}
+	public int pop(){
+		if(isEmpty()){
+			System.out.println("The stsack is empty.");
+			return 0;
+		}
+		else
+			return arr[top--];
+	}
+	public void display1(){
+		System.out.println("The stack view in LIFO manner: ");
+		for(int i=this.top;i>=0;i--){
+			System.out.print(arr[i]+"\t");
+		}
+	}
+	public void equalStack(stack1 s2 ){
+		if(this.top==s2.top){
+			this.display1();
+			s2.display1();
+		}
+	}
+}
+
+
+public class Prblm1 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter the size of 1st stack : ");
+		int n=sc.nextInt();
+		stack1 s1=new stack1(n);
+		System.out.println("Enter the size of 2nd stack : ");
+		int n1=sc.nextInt();
+		stack1 s2=new stack1(n1);
+		int x=0;
+		while(true)
+		{
+			if(x==1)
+				break;
+			System.out.println("Enter 1 for push or pop into stack 1  ");
+			System.out.println("Enter 2 for push or pop into stack 2  ");
+			System.out.println("Enter 3 to display   ");
+			System.out.println("Enter 4 to stop   ");
+			
+			if((s1.top!=-1) && (s2.top!=-1) && (s1.top==s2.top)) {
+				s1.display1();
+				s2.display1();
+			}
+			int ch= sc.nextInt();
+			switch(ch){
+			case 1: {
+				System.out.println("Enter 1 for push  into stack 1  ");
+				System.out.println("Enter 2 for pop into stack 1  ");
+				int p=sc.nextInt();
+				switch(p){
+				case 1: {
+					System.out.println("Enter the value for push ");
+					int val=sc.nextInt();
+					s1.push(val);
+					break;
+				}
+				case 2: 
+					s1.pop();
+				}
+				break;
+			}
+				
+			case 2:{
+				System.out.println("Enter 1 for push  into stack 2 : ");
+				System.out.println("Enter 2 for pop into stack 2 : ");
+				int p=sc.nextInt();
+				switch(p){
+				case 1: {
+					System.out.println("Enter the value for push: ");
+					int val=sc.nextInt();
+					s2.push(val);
+					break;
+				}
+				case 2: 
+					s2.pop();
+				}
+				break;
+			}
+			case 3:{
+				s1.display1();
+				s2.display1();
+				break;
+			}
+			case 4:
+				x=1;
+				break;
+
+			}
+		}
+		sc.close();
+	}
+}
+
+
+/*
+ * OutPut:
+ * -----------------------
+ * Enter the size of 1st stack : 
+3
+Enter the size of 2nd stack : 
+4
+Enter 1 for push or pop into stack 1  
+Enter 2 for push or pop into stack 2  
+Enter 3 to display   
+Enter 4 to stop   
+1
+Enter 1 for push  into stack 1  
+Enter 2 for pop into stack 1  
+1
+Enter the value for push 
+90
+Enter 1 for push or pop into stack 1  
+Enter 2 for push or pop into stack 2  
+Enter 3 to display   
+Enter 4 to stop   
+1
+Enter 1 for push  into stack 1  
+Enter 2 for pop into stack 1  
+1
+Enter the value for push 
+80
+Enter 1 for push or pop into stack 1  
+Enter 2 for push or pop into stack 2  
+Enter 3 to display   
+Enter 4 to stop   
+1
+Enter 1 for push  into stack 1  
+Enter 2 for pop into stack 1  
+1
+Enter the value for push 
+70
+Enter 1 for push or pop into stack 1  
+Enter 2 for push or pop into stack 2  
+Enter 3 to display   
+Enter 4 to stop   
+1
+Enter 1 for push  into stack 1  
+Enter 2 for pop into stack 1  
+1
+Enter the value for push 
+66
+The stsack is full.
+Enter 1 for push or pop into stack 1  
+Enter 2 for push or pop into stack 2  
+Enter 3 to display   
+Enter 4 to stop   
+1
+Enter 1 for push  into stack 1  
+Enter 2 for pop into stack 1  
+2
+Enter 1 for push or pop into stack 1  
+Enter 2 for push or pop into stack 2  
+Enter 3 to display   
+Enter 4 to stop   
+3
+The stack view in LIFO manner: 
+80	90	The stack view in LIFO manner: 
+Enter 1 for push or pop into stack 1  
+Enter 2 for push or pop into stack 2  
+Enter 3 to display   
+Enter 4 to stop   
+2
+Enter 1 for push  into stack 2 : 
+Enter 2 for pop into stack 2 : 
+1
+Enter the value for push: 
+34
+Enter 1 for push or pop into stack 1  
+Enter 2 for push or pop into stack 2  
+Enter 3 to display   
+Enter 4 to stop   
+2
+Enter 1 for push  into stack 2 : 
+Enter 2 for pop into stack 2 : 
+1
+Enter the value for push: 
+66
+Enter 1 for push or pop into stack 1  
+Enter 2 for push or pop into stack 2  
+Enter 3 to display   
+Enter 4 to stop   
+The stack view in LIFO manner: 
+80	90	The stack view in LIFO manner: 
+66	34
+
+*/
+
+
+
