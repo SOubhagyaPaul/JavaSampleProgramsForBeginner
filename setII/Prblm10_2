@@ -69,3 +69,61 @@ public class Prblm10_2 {
 	}
 	
 }
+/*
+Enter sales data for last month: 
+Enter the total value that sales people 1 sales product1 : 
+10
+Enter the total value that sales people 2 sales product1 : 
+20
+Enter the total value that sales people 3 sales product1 : 
+30
+Enter the total value that sales people 4 sales product1 : 
+10
+Enter the total value that sales people 1 sales product2 : 
+15
+Enter the total value that sales people 2 sales product2 : 
+15
+Enter the total value that sales people 3 sales product2 : 
+5
+Enter the total value that sales people 4 sales product2 : 
+25
+Enter the total value that sales people 1 sales product3 : 
+100
+Enter the total value that sales people 2 sales product3 : 
+200
+Enter the total value that sales people 3 sales product3 : 
+300
+Enter the total value that sales people 4 sales product3 : 
+400
+Enter the total value that sales people 1 sales product4 : 
+50
+Enter the total value that sales people 2 sales product4 : 
+100
+Enter the total value that sales people 3 sales product4 : 
+150
+Enter the total value that sales people 4 sales product4 : 
+200
+Enter the total value that sales people 1 sales product5 : 
+10
+Enter the total value that sales people 2 sales product5 : 
+20
+Enter the total value that sales people 3 sales product5 : 
+30
+Enter the total value that sales people 4 sales product5 : 
+40
+	Saleperson1	Saleperson2	Saleperson3	Saleperson4
+Product1	10		20		30		10		
+Product2	15		15		5		25		
+Product3	100		200		300		400		
+Product4	50		100		150		200		
+Product5	10		20		30		40		
+The product1total sale : 70
+The product2total sale : 60
+The product3total sale : 1000
+The product4total sale : 500
+The product5total sale : 100
+The sales person1 done total sale : 185
+The sales person2 done total sale : 355
+The sales person3 done total sale : 515
+The sales person4 done total sale : 675
+*/
