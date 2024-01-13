@@ -1,0 +1,274 @@
+package day2;
+
+import java.util.Scanner;
+
+/*
+ * Define a class Account to represent a bank account. Include the following members.
+Instance Variable: Name of the depositor, Account number, Account type, Balance amount in the account.
+Method: To assign initial values, To deposit an amount, To withdraw an amount after checking the balance,
+To display name and balance.
+Write a program to test the program for a given number of customers. 
+The program should be able to search any customer if the account 
+number is provided.
+ * 
+ */
+class Account{
+	//String Cname;
+	long Ac_no;
+	String Ac_typ;
+	double balance;
+	Account(){
+
+	}
+	Account(long Ac_no ,String Ac_typ,double balance){
+		//this.Cname=Cname;
+		this.Ac_no=Ac_no;
+		this.Ac_typ=Ac_typ;
+		this.balance=balance;
+	}
+	void deposit(int amount) {
+		this.balance+=amount;
+		System.out.println("Your current balance is : "+this.balance);
+	}
+	void withdraw(int amount) {
+		if(this.balance>=amount) {
+			this.balance-=amount;
+			System.out.println("Balance after withdraw: "+this.balance);		
+		}
+		else
+			System.out.println("Not sufficient money to withdraw.");	
+	}
+	Account searchAc(long ac,Account ob[]) {
+		for(int i=0;i<ob.length;i++) {
+			if(ac==ob[i].Ac_no) {
+				return ob[i];
+			}	
+		}
+		return null;
+	}
+	void display() {
+		//System.out.println("Customer name is: "+this.Cname);
+		System.out.println("Customer balance is: "+this.balance);
+		System.out.println("Customer A/cno is: "+this.Ac_no);
+		System.out.println("Customer Ac type is: "+this.Ac_typ);
+	}
+}
+public class Prblm5 {
+	public static void main(String[] args) {
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Enter the number of customer: ");
+		int n=sc.nextInt();
+		Account obj[]=new Account[n];
+		Account obj1=new Account();
+		for(int i=0;i<obj.length;i++) {
+			//System.out.print("Enter the name of account holder: ");
+			//String Cname=sc.nextLine();
+			System.out.println("Enter the A/C no: ");
+			long Ac_no=sc.nextLong();
+			System.out.println("Enter the A/C type : ");
+			String Ac_typ=sc.nextLine();
+			System.out.println("Enter the balance: ");
+			double balance=sc.nextDouble();
+			obj[i]=new Account(Ac_no,Ac_typ,balance);
+		}
+		while(true) {
+			System.out.println("Enter 1 for diposite.");
+			System.out.println("Enter 2 for withdraw.");
+			System.out.println("Enter 3 for Display All.");
+			System.out.println("Enter 4 for END.");
+			int ch=sc.nextInt();
+			switch(ch) {
+			case 1: 
+				System.out.println("Enter Account number for diposite: ");
+				long ac=sc.nextLong();
+				Account u1= obj1.searchAc(ac, obj);
+				if(u1 !=null) {
+				System.out.println("Enter the amount: ");
+				int val=sc.nextInt();
+				u1.deposit(val);
+				}
+				else System.out.println("A/c no not found.");
+				break;
+			case 2: 
+				System.out.println("Enter Account number for Withdraw: ");
+				long ac2=sc.nextLong();
+				Account u2= obj1.searchAc(ac2, obj);
+				if(u2 !=null) {
+				System.out.println("Enter the amount: ");
+				int val2=sc.nextInt();
+				u2.withdraw(val2);
+				}
+				else System.out.println("A/c no not found.");
+				break;
+			case 3:
+				for(int i=0;i<obj.length;i++) {
+					obj[i].display();
+				}
+				break;
+			case 4: 
+				System.exit(0);
+			}
+		}
+		
+	}
+}
+
+/*
+ * Enter the number of customer: 
+
+3
+Enter the A/C no: 
+1
+Enter the A/C type : 
+Enter the balance: 
+10
+Enter the A/C no: 
+2
+Enter the A/C type : 
+Enter the balance: 
+5
+Enter the A/C no: 
+3
+Enter the A/C type : 
+Enter the balance: 
+20
+Enter 1 for diposite.
+Enter 2 for withdraw.
+Enter 3 for Display All.
+Enter 4 for END.
+1
+Enter Account number for diposite: 
+12
+A/c no not found.
+Enter 1 for diposite.
+Enter 2 for withdraw.
+Enter 3 for Display All.
+Enter 4 for END.
+1
+Enter Account number for diposite: 
+1
+Enter the amount: 
+10
+Your current balance is : 20.0
+Enter 1 for diposite.
+Enter 2 for withdraw.
+Enter 3 for Display All.
+Enter 4 for END.
+1
+Enter Account number for diposite: 
+1
+Enter the amount: 
+11
+Your current balance is : 31.0
+Enter 1 for diposite.
+Enter 2 for withdraw.
+Enter 3 for Display All.
+Enter 4 for END.
+1
+Enter Account number for diposite: 
+2
+Enter the amount: 
+15
+Your current balance is : 20.0
+Enter 1 for diposite.
+Enter 2 for withdraw.
+Enter 3 for Display All.
+Enter 4 for END.
+1
+Enter Account number for diposite: 
+2
+Enter the amount: 
+115
+Your current balance is : 135.0
+Enter 1 for diposite.
+Enter 2 for withdraw.
+Enter 3 for Display All.
+Enter 4 for END.
+1
+Enter Account number for diposite: 
+3
+Enter the amount: 
+20
+Your current balance is : 40.0
+Enter 1 for diposite.
+Enter 2 for withdraw.
+Enter 3 for Display All.
+Enter 4 for END.
+1
+Enter Account number for diposite: 
+3
+Enter the amount: 
+5
+Your current balance is : 45.0
+Enter 1 for diposite.
+Enter 2 for withdraw.
+Enter 3 for Display All.
+Enter 4 for END.
+2
+Enter Account number for Withdraw: 
+9
+A/c no not found.
+Enter 1 for diposite.
+Enter 2 for withdraw.
+Enter 3 for Display All.
+Enter 4 for END.
+2
+Enter Account number for Withdraw: 
+1
+Enter the amount: 
+100
+Not sufficient money to withdraw.
+Enter 1 for diposite.
+Enter 2 for withdraw.
+Enter 3 for Display All.
+Enter 4 for END.
+2
+Enter Account number for Withdraw: 
+2
+Enter the amount: 
+60
+Balance after withdraw: 75.0
+Enter 1 for diposite.
+Enter 2 for withdraw.
+Enter 3 for Display All.
+Enter 4 for END.
+3
+Customer balance is: 31.0
+Customer A/cno is: 1
+Customer Ac type is: 
+Customer balance is: 75.0
+Customer A/cno is: 2
+Customer Ac type is: 
+Customer balance is: 45.0
+Customer A/cno is: 3
+Customer Ac type is: 
+Enter 1 for diposite.
+Enter 2 for withdraw.
+Enter 3 for Display All.
+Enter 4 for END.
+2
+Enter Account number for Withdraw: 
+1
+Enter the amount: 
+20
+Balance after withdraw: 11.0
+Enter 1 for diposite.
+Enter 2 for withdraw.
+Enter 3 for Display All.
+Enter 4 for END.
+3
+Customer balance is: 11.0
+Customer A/cno is: 1
+Customer Ac type is: 
+Customer balance is: 75.0
+Customer A/cno is: 2
+Customer Ac type is: 
+Customer balance is: 45.0
+Customer A/cno is: 3
+Customer Ac type is: 
+Enter 1 for diposite.
+Enter 2 for withdraw.
+Enter 3 for Display All.
+Enter 4 for END.
+4
+ */
