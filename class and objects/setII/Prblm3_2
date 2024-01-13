@@ -1,0 +1,38 @@
+/*
+ * Write a program that defines a class with one static variable called cnt. 
+ * Create two or more objects of the class. The class also contains a method that 
+ * increments the cnt variable whenever a new instance of the class is created. 
+ * Write a driver class to test the above class.
+ */
+package day2;
+
+class A{
+	static int cnt;
+	A(){
+		cnt++;
+	}
+	void display() {
+		System.out.println("Current cnt value is : "+cnt);
+	}
+	
+}
+
+public class Prblm3_2 {
+
+	public static void main(String[] args) {
+		A obj1= new A();
+		obj1.display();
+		A obj2= new A();
+		obj2.display();
+		A obj3= new A();
+		obj3.display();
+		
+
+	}
+
+}
+/*
+Current cnt value is : 1
+Current cnt value is : 2
+Current cnt value is : 3
+*/
