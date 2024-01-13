@@ -1,0 +1,139 @@
+package day2;
+
+import java.util.Scanner;
+
+/*
+ * The annual examination results of N students are tabulated as follows:
+Roll No. Subject 1 Subject 2 Subject 3
+....		…		.		.
+....		…		.		.
+Write a program to read the data and determine the following:
+(a) Total marks obtain by each student
+(b) The highest marks in each subject and the roll no of the student who secured it
+(c) The student who obtained the highest total marks
+ */
+class Student{
+	int sub1,sub2,sub3,totalMarks;
+	Student(){
+		
+	}
+	Student(int sub1, int sub2, int sub3){
+		this.sub1=sub1;
+		this.sub2=sub2;
+		this.sub3=sub3;
+	}
+	int total() {
+		this.totalMarks=this.sub1+this.sub2+this.sub3;
+		return totalMarks;
+	}
+	void highestMarks(Student ob[]) {
+		int max=ob[0].sub1;			//Checking for 1st sub
+		int index=0;
+		for(int i=0;i<ob.length;i++) {
+			if(ob[i].sub1>max) {
+				max=ob[i].sub1;
+				index=i;
+			}
+		
+		}
+		System.out.println("Highest marks in sub 1 : "+max+" the student who secured it: Student "+(index+1));
+		
+		max=ob[0].sub2;				//Checking for 2nd sub
+		index=0;
+		for(int i=0;i<ob.length;i++) {
+			if(ob[i].sub2>max) {
+				max=ob[i].sub2;
+				index=i;
+			}
+			
+		}
+		System.out.println("Highest marks in sub 2 : "+max+" the student who secured it: Student "+(index+1));
+		max=ob[0].sub3;			//Checking for 3rd sub
+		index=0;
+		for(int i=0;i<ob.length;i++) {
+			if(ob[i].sub3>max) {
+				max=ob[i].sub3;
+				index=i;
+			}
+			
+		}
+		System.out.println("Highest marks in sub 3 : "+max+" the student who secured it : Student "+(index+1));
+	}
+	
+	void highestTotal(Student s[]) {
+		int max=s[0].totalMarks;
+		int index=0;
+		for(int i=0;i<s.length;i++) {
+			if(s[i].totalMarks>max)
+				max=s[i].totalMarks;
+				index++;
+		}
+		System.out.println("Student obtained the highest total marks: Student "+index);
+	}
+}
+
+
+public class Prblm4 {
+
+	public static void main(String[] args) {
+		 Scanner sc = new Scanner(System.in);
+		 int sub1,sub2,sub3;
+		 System.out.print("Enter the number of students: ");
+	     int n = sc.nextInt();
+	     Student ob[]=new Student[n];
+	     Student s =new Student();
+	     for(int i=0;i<ob.length;i++) {
+	    	 System.out.println("Enter the marks of Student "+(i+1));
+	    	 System.out.println("Enter the marks of Sub1: ");
+	    	 sub1=sc.nextInt();
+	    	 System.out.println("Enter the marks of Sub2: ");
+	    	 sub2=sc.nextInt();
+	    	 System.out.println("Enter the marks of Sub3: ");
+	    	 sub3=sc.nextInt();
+	    	 ob[i]=new Student(sub1,sub2,sub3);
+	     }
+	     for(int i=0;i<ob.length;i++) {
+	     System.out.println("Total marks is : "+ob[i].total());
+	     }
+	     
+	     s.highestMarks(ob);
+	     s.highestTotal(ob);
+	     
+
+	}
+
+}
+
+/*
+ * output:
+ * ---------------
+ * Enter the number of students: 3
+Enter the marks of Student 1
+Enter the marks of Sub1: 
+14
+Enter the marks of Sub2: 
+2
+Enter the marks of Sub3: 
+15
+Enter the marks of Student 2
+Enter the marks of Sub1: 
+55
+Enter the marks of Sub2: 
+1
+Enter the marks of Sub3: 
+50
+Enter the marks of Student 3
+Enter the marks of Sub1: 
+16
+Enter the marks of Sub2: 
+11
+Enter the marks of Sub3: 
+10
+Total marks is : 31
+Total marks is : 106
+Total marks is : 37
+Highest marks in sub 1 : 55 the student who secured it: Student 2
+Highest marks in sub 2 : 11 the student who secured it: Student 3
+Highest marks in sub 3 : 50 the student who secured it : Student 2
+Student obtained the highest total marks: Student 3
+ */
