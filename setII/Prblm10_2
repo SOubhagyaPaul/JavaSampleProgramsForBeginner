@@ -1,0 +1,71 @@
+package day1;
+
+import java.util.Scanner;
+
+/*
+ * A company has four salespeople (1 to 4) who sell five different products (1 to 5). Once a 
+day, each salesperson passes in a slip for each different type of product sold. Each slip 
+contains:
+* The salesperson number
+* The product number
+* The total dollar value of that product sold that day
+Thus, each salesperson passes in between 0 and 5 sales slips per day. Assume that the 
+information from all of the slips for last month is available. Write a program that will 
+read all this information for last month’s sales and summarize the total sales by 
+salesperson by product. All totals should be stored in the double-subscripted array sales. 
+After processing all the information for last month, print the results in tabular format with 
+each of the columns represent a particular salesperson and each of the rows representing a 
+particular product. Cross total each row to get the total sales of each product for last 
+month, and cross total each column to get the total sales by salesperson for last month. 
+Your tabular printout should include these cross totals to the right of the totaled rows and 
+to the bottom of the totaled columns
+ * */
+
+
+public class Prblm10_2 {
+
+	public static void main(String []args) {
+		Scanner sc=new Scanner(System.in);
+		int summary[][]=new int[5][4];
+		int totalSale[]=new int[5];
+		int salebyPerson[]=new int[4];
+		int sum=0;
+		System.out.println("Enter sales data for last month: ");
+		for(int i=0;i<5;i++) {
+			for(int j=0;j<4;j++) {
+				System.out.println("Enter the total value that sales people "+(j+1)+" sales product"+(i+1)+" : ");
+				summary[i][j]=sc.nextInt();
+			}
+		}
+		System.out.println("\tSaleperson1\tSaleperson2\tSaleperson3\tSaleperson4");
+		for(int i=0;i<5;i++) {
+			System.out.print("Product"+(i+1)+"\t");
+			for(int j=0;j<4;j++) {
+				System.out.print(summary[i][j]+"\t\t");
+			}
+			System.out.println();
+		}
+		for(int i=0;i<5;i++) {
+			for(int j=0;j<4;j++) {
+				sum+=summary[i][j];
+			}
+			totalSale[i]=sum;
+			sum=0;
+		}
+		for(int j=0;j<4;j++) {
+			for(int i=0;i<5;i++) {
+				sum+=summary[i][j];
+			}
+			salebyPerson[j]=sum;
+			sum=0;
+		}
+		for(int i=0;i<5;i++) {
+			System.out.println("The product"+(i+1)+"total sale : "+totalSale[i]);
+		}
+		for(int i=0;i<4;i++) {
+			System.out.println("The sales person"+(i+1)+" done total sale : "+salebyPerson[i]);
+		}
+		sc.close();
+	}
+	
+}
