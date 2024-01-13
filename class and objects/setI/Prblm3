@@ -1,0 +1,55 @@
+package day2;
+
+import java.util.Scanner;
+
+/*
+ * Write a program to print the area of a rectangle by creating a class named 'Area' having two methods. 
+ * First method named as 'setDim' takes length and breadth of rectangle as parameters and the second 
+ * method named as 'getArea' returns the area of the rectangle. Length and breadth of rectangle
+ *  are entered through keyboard.
+ */
+
+class Area{
+	int l,b,a;
+	void setDim(int l, int b) {
+		this.l=l;
+		this.b=b;
+	}
+	int getArea() {
+		
+		a=this.l*this.b;
+		return a;
+	}
+	
+}
+public class Prblm3 {
+
+	public static void main(String[] args) {
+		Area r1=new Area();
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter the length of the rectangle: ");
+		int l=sc.nextInt();
+		System.out.println("Enter the breadth of the rectangle: ");
+		int b=sc.nextInt();
+		r1.setDim(l, b);
+		System.out.println("The area of the rectangle is: "+r1.getArea());
+		sc.close();
+	}
+}
+
+
+/*
+ * output:
+ * Enter the length of the rectangle: 
+2
+Enter the breadth of the rectangle: 
+4
+The area of the rectangle is: 8
+-------------------------------------------
+Enter the length of the rectangle: 
+12
+Enter the breadth of the rectangle: 
+8
+The area of the rectangle is: 96
+ */
+
