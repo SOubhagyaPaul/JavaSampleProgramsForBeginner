@@ -1,0 +1,9 @@
+1. Create a class called Time that has separate data member for hours, minutes and seconds. Define member functions to perform the following tasks:
+to display the time in the format hh: mm: ss.
+to add times passed as arguments.
+to check which among two times passed as arguments is greater.
+Write a program to test the class and its functions. Use constructor to initialize the instance variables of the class Time.
+2. Create two classes DM and DB which store the value of distances. DM stores distances in meters and centimeters and DB in feet and inches. Write a program that can read values for the class objects and add one object of DM with another object of DB. Use method to carry out the addition operation. The object that stores the result may be a DM object or a DB object, depending on the units in which the results are required. The display should be done in the format of feet and inches or meters and centimeters depending on the object on display.
+3. Write a program that defines a class with one static variable called cnt. Create two or more objects of the class. The class also contains a method that increments the cnt variable whenever a new instance of the class is created. Write a driver class to test the above class.
+4. Create a class with a private field and a private method. Create an inner class with a method that modifies the outer class field and calls the outer class method. In a second outer class method, create an object of the inner class and call it’s method, then show the effect on the outer class object.
+5. Create a class containing an inner class that itself contains an inner class. Repeat this using static inner class. What are the names of the .class files produced by the compiler?
