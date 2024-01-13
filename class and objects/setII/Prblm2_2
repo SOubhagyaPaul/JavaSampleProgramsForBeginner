@@ -1,0 +1,65 @@
+package day2;
+
+import java.util.Scanner;
+
+/*
+ * Create two classes DM and DB which store the value of distances. 
+ * DM stores distances in meters and centimeters and DB in feet and inches. 
+ * Write a program that can read values for the class objects and add one object 
+ * of DM with another object of DB. Use method to carry out the addition operation. 
+ * The object that stores the result may be a DM object or a DB object, depending on 
+ * the units in which the results are required. The display should be done in the format 
+ * of feet and inches or meters and centimeters depending on the object on display.
+ */
+
+
+class DM{
+	public float m,cm;
+	DM(){
+		this.m=0;
+		this.cm=0;
+	}
+	DM(float m, float cm){
+		this.m=m;
+		this.cm=cm;
+	}
+	void add(DB ob) {
+		DM obj=new DM();
+		ob.inch=ob.inch+(ob.ft*12);//convert inch
+		ob.inch*=2.540;//convert cm
+		obj.cm=this.cm+ob.inch;
+		if(obj.cm>=100) {
+			obj.m=this.m+(obj.cm/100);
+			obj.cm=obj.cm%100;
+		}
+		System.out.println("The sum is : "+obj.m+" m "+obj.cm+" cm");
+		
+		
+	}
+	
+}
+
+class DB{
+	float ft,inch;
+	DB(float ft, float inch){
+		this.ft=ft;
+		this.inch=inch;
+	}
+	
+}
+public class Prblm2_2 {
+
+	public static void main(String[] args) {
+		DM obj1=new DM(12,1);
+		DB obj2=new DB(10,2);
+		obj1.add(obj2);
+
+	}
+
+}
+
+/*output: 
+ * The sum is : 15.1088 m 10.880005 cm
+ */
+
+
