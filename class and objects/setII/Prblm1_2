@@ -1,0 +1,91 @@
+package day2;
+/*
+ * Create a class called Time that has separate data member for hours, minutes and seconds. 
+ * Define member functions to perform the following tasks:
+to display the time in the format hh: mm: ss.
+to add times passed as arguments.
+to check which among two times passed as arguments is greater.
+Write a program to test the class and its functions. Use constructor to initialize the 
+instance variables of the class Time.
+ */
+class Time{
+	int h,m,s;
+	Time(){
+		this.h=0;
+		this.m=0;
+		this.s=0;
+	}
+	Time(int h, int m, int s){
+		this.h=h;
+		this.m=m;
+		this.s=s;
+	}
+	void add(Time t) {
+		Time t1=new Time();
+		t1.s=this.s+t.s;
+		if(t1.s>=60) {
+			t1.m++;
+			t1.s=t1.s-60;
+		}
+		t1.m=t1.m+this.m+t.m;
+		if(t1.m>=60) {
+			t1.h++;
+			t1.m=t1.m-60;
+		}
+		t1.h=t1.h+this.h+t.h;
+		System.out.println("After addition the time is : hh "+t1.h+" mm "+t1.m+" ss "+t1.s);
+	}
+	void comp(Time t) {
+		if(this.h>t.h) 
+			System.out.println("Greater time is hh "+this.h+" mm "+this.m+" ss "+this.s);
+		else if(this.h==t.h) {
+			if(this.m>t.m)
+				System.out.println("Greater time is hh "+this.h+" mm "+this.m+" ss "+this.s);
+			else if(this.m==t.m) {
+				if(this.s>t.s)
+					System.out.println("Greater time is hh "+this.h+" mm "+this.m+" ss "+this.s);
+				else if(this.s==t.s)
+					System.out.println("Two time ime is Equal");
+				else
+					System.out.println("Greater time is hh "+t.h+" mm "+t.m+" ss "+t.s);
+			}
+			else
+				System.out.println("Greater time is hh "+t.h+" mm "+t.m+" ss "+t.s);
+		}
+		else 
+			System.out.println("Greater time is hh "+t.h+" mm "+t.m+" ss "+t.s);
+		
+	}
+}
+public class Prblm1_2 {
+
+	public static void main(String[] args) {
+		Time obj1=new Time(5,45,55);
+		Time obj2=new Time(4,10,20);
+		Time obj3=new Time(5,55,35);
+		Time obj4=new Time(10,11,5);
+		Time obj5=new Time(5,45,55);
+		obj1.add(obj2);
+		obj1.add(obj5);
+		obj1.add(obj3);
+		obj1.add(obj4);
+		obj1.comp(obj3);
+		obj1.comp(obj2);
+		obj1.comp(obj4);
+		obj1.comp(obj5);
+	}
+}
+
+
+/*
+ * output:
+ * After addition the time is : hh 9 mm 56 ss 15
+After addition the time is : hh 11 mm 31 ss 50
+After addition the time is : hh 11 mm 41 ss 30
+After addition the time is : hh 15 mm 57 ss 0
+Greater time is hh 5 mm 55 ss 35
+Greater time is hh 5 mm 45 ss 55
+Greater time is hh 10 mm 11 ss 5
+Two time ime is Equal
+
+ */
