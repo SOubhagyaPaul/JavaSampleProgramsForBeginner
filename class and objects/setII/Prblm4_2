@@ -1,0 +1,38 @@
+/*
+ * Create a class with a private field and a private method. 
+ * Create an inner class with a method that modifies the outer class field 
+ * and calls the outer class method. In a second outer class method, create an 
+ * object of the inner class and call it’s method, 
+ * then show the effect on the outer class object.
+ */
+class Outer{
+	private int out=1;
+	void dispOuter() {
+		System.out.println("value of private variable:"+out);
+	}
+	class Inner{
+		void modifyOuter() {
+			out++;
+			dispOuter();
+		}
+	}
+	void dispOuter2() {
+		Inner obj=new Inner();
+		obj.modifyOuter();
+	}	
+	
+}
+public class Prblm4_2 {
+
+	public static void main(String[] args) {
+		Outer ob= new Outer();
+		ob.dispOuter();
+		ob.dispOuter2();
+
+	}
+
+}
+/*
+ * value of private variable:1
+value of private variable:2
+ */
