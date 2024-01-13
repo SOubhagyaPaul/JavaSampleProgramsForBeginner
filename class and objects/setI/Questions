@@ -1,0 +1,16 @@
+1. Create a class Stack that declares a stack and the methods to perform push ( ), pop ( ) and display( ) operations on the stack. Create two stacks and write a menu-driven program to perform operations on the two stacks. Whenever the number of elements in the two stacks becomes equal, a message should automatically be generated displaying the number of elements in each stack.
+2. Create a class Queue to implement queue data structure with constructors. Define suitable methods for insertion & deletion of elements to & from the queue. Write a program for this, clearly specifying the overflow & underflow conditions.
+3. Write a program to print the area of a rectangle by creating a class named 'Area' having two methods. First method named as 'setDim' takes length and breadth of rectangle as parameters and the second method named as 'getArea' returns the area of the rectangle. Length and breadth of rectangle are entered through keyboard.
+.
+4. The annual examination results of N students are tabulated as follows:
+Roll No. Subject 1 Subject 2 Subject 3
+…..
+…..
+Write a program to read the data and determine the following:
+(a) Total marks obtain by each student
+(b) The highest marks in each subject and the roll no of the student who secured it
+(c) The student who obtained the highest total marks
+5. Define a class Account to represent a bank account. Include the following members.
+Instance Variable: Name of the depositor, Account number, Account type, Balance amount in the account.
+Method: To assign initial values, To deposit an amount, To withdraw an amount after checking the balance, To display name and balance.
+Write a program to test the program for a given number of customers. The program should be able to search any customer if the account number is provided.
