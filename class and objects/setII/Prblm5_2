@@ -1,0 +1,38 @@
+package day2;
+/*
+ * Create a class containing an inner class that itself contains an inner class. 
+ * Repeat this using static inner class. What are the names of the .
+ * class files produced by the compiler?
+ */
+class OuterClass {
+    class InnerClass1 {
+        class InnerClass2 {//Inner most
+            
+        }
+    }
+
+    static class SInnerClass {// Static inner class
+    	static class SInnerClass2{
+    		
+    	}
+    }
+}
+public class Prblm5_2 {
+	public static void main(String []args) {
+		OuterClass obj1=new OuterClass();	//obj for outer class
+		OuterClass.InnerClass1 o1=obj1.new InnerClass1();	//obj for 1st inner class
+		OuterClass.InnerClass1.InnerClass2 o2= o1.new InnerClass2();	//obj for inner inner class
+		
+		OuterClass.SInnerClass stob1= new OuterClass.SInnerClass();		//obj of static inner class of the outer class
+		OuterClass.SInnerClass.SInnerClass2 stob2= new OuterClass.SInnerClass.SInnerClass2(); 	//obj of static inner inner class 
+	}
+}
+
+
+/*
+ * OuterClass.class ----->class file of the outer class
+OuterClass$InnerClass1.class------->class file of 1st innter class
+OuterClass$InnerClass1$InnerClass2.class-----------> class file of inner inner class
+OuterClass$SInnerClass.class----------------> class file of inner static class
+OuterClass$SInnerClass$SInnerClass2.class-----------> class file of inner inner static class
+ */
