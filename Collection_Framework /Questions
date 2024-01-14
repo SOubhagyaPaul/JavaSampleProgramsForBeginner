@@ -1,0 +1,13 @@
+1. Write a program that reads in a series of first names and stores them in a LinkedList. Do not store
+duplicate names. Allow the user to search for a first name.
+2. Write a program that uses a StringTokenizer to tokenize a line of text input by the user and places
+each token in a treeSet. Print the elements of the treeSet. [Note: This should cause the elements to be
+printed in ascending sorted order.]
+3. Write a program that inputs the names of people into different array list, A and B. Array A has N
+number of names while array B has M number of names, with no duplicates in either of them. Merge
+arrays A and B into a single array list C, such that the resulting array list is sorted alphabetically.
+Display all the three arrays list, A, B and C, stored alphabetically.
+4. Write a program to find whether an array is subset of another array or not.
+5. Write a program to find elements which are present in first array and not in second array.
+6. Write a java program to check the number where the difference between every adjacent digit should be 1
+using ArrayList.
