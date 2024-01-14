@@ -1,0 +1,57 @@
+1. Write an inheritance hierarchy for classes Quadrilateral, Trapezoid, Parallelogram, Rectangle
+and Square. Use Quadrilateral as the super class of the hierarchy. Specify the instance
+variables and methods for each class. The private instance variables of Quadrilateral should
+be the x-y coordinate pairs for the four endpoints of the Quadrilateral. Write a program that
+instantiates objects of your classes and outputs each object's area (except Quadrilateral).
+
+2. Create a general class ThreeDObject and derive the classes Box, Cube, Cylinder and Cone
+from it. The class ThreeDObject has methods wholeSurfaceArea ( ) and volume ( ). Override
+these two methods in each of the derived classes to calculate the volume and whole surface
+area of each type of three-dimensional objects. The dimensions of the objects are to be taken
+from the users and passed through the respective constructors of each derived class. Write a
+main method to test these classes.
+
+3. Write a program to create a class named Vehicle having protected instance variables
+regnNumber, speed, color, ownerName and a method showData ( ) to show “This is a vehicle
+class”. Inherit the Vehicle class into subclasses named Bus and Car having individual private
+instance variables routeNumber in Bus and manufacturerName in Car and both of them
+having showData ( ) method showing all details of Bus and Car respectively with content of
+the super class’s showData ( ) method.
+
+4. An educational institution wishes to maintain a database of its employees. The database is
+divided into a number of classes whose hierarchical relationships are shown below. Write all
+the classes and defines the methods to create the database and retrieve individual information
+as and when needed.
+Write a driver program to test the classes.
+Staff (code, name)
+Teacher (subject, publication) is a Staff
+Officer (grade) is a Staff
+Typist (speed) is a Staff
+RegularTypist (remuneration) is a Typist
+CasualTypist (daily wages) is a Typist.
+
+5. Consider an example of book shop which sells books & video tapes. It’s modeled by Book &
+Tape classes. These two classes are inherited from the abstract class called Media. The Media
+class has common data members such as title & publication. The Book class has data
+member for storing a no. of pages in a book & Tape class has the playing time in a tape. Each
+class will have method such as read ( ) & show ( ). Write a program that models this class
+hierarchy & processes objects using reference to base class only.
+
+6. Assume that a Bank maintains two kinds of accounts for its customers, one called savings
+account and the other current account. The savings account provides compound interest and
+withdrawal facilities. The current account provides no interest. Current account holders
+should maintain balance and if the balance falls below this level, a service charge is imposed.
+o Create a class Account that stores customers name, account number and type of the
+account. From this derive the classes CurAccount and SavAccount to make them
+more specific to their requirements.
+o Include the necessary methods in order to achieve the following tasks:
+Assign initial values
+Accept deposit from a customer and update the balance
+Permit withdrawal and update the balance
+Compute and deposit interest
+Check for the minimum balance, impose penalty, if necessary, and update it.
+Display the balance
+o Write a program that creates an array of Bank Account and displays a menu that lets a
+new account to be created, perform deposit and withdrawal transactions on the basis
+of account number, display the balance of account holder for whom the account
+number is provided.
