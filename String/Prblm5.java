@@ -23,7 +23,7 @@ class ArrayExample{
         boolean swapped;
         for (i = 0; i < products.length ; i++) {
             swapped = false;		//this is for if the array is already sorted loop will execute once complexity will be n
-            for (j = 0; j < products.length- 1; j++) {
+            for (j = 0; j < products.length-i- 1; j++) {
                 if (products[j].compareTo(products[j+1]) > 0) {
                     
                     temp = products[j];
