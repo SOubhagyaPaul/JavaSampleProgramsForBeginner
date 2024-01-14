@@ -1,0 +1,32 @@
+1. Create three interfaces, each with two methods. Inherit a new interface from the three,
+adding a new method. Create a class by implementing the new interface and also
+inheriting from a concrete class. Now write four methods, each of which takes one of the
+four interfaces as an argument. In main( ), create an object of your class and pass it to
+each of the methods.
+2. Create an interface with at least one method, in its own package. Create a class in a
+separate package. Add a protected inner class that implements the interface. In a third
+package, inherit from your class and, inside a method, return an object of the protected
+inner class, up casting to the interface during the return.
+3. Create a private inner class that implements a public interface. Write a method that
+returns a reference to an instance of the private inner class, up cast to the interface. Show
+that the inner class is completely hidden by trying to downcast to it.
+4. Create an interface Department containing attributes deptName and deptHead. It also
+has abstract methods for getting data and printing the attributes. Create a class hostel
+containing hostelName, hostelLocation and numberofRooms. The class contains methods
+for getting and printing the attributes. Then write Student class extending the Hostel
+class and implementing the Department interface. This class contains attributes
+studentName, regdNo, electiveSubject and avgMarks. Write suitable getData and
+printData methods for this class. Also implement the abstract methods of the Department
+interface. Write a driver class to test the Student class. The program should be menu
+driven containing the options:
+i) Admit new student
+ii) Migrate a student
+iii) Display details of a student
+For the third option a search is to be made on the basis of the entered registration number.
+5. Complete the following:
+i) Create a package named org.shapes.
+ii) Create some classes in the package representing some common geometric shapes like
+Square, Triangle, Circle and so on. The classes should contain area and perimeter
+methods in them.
+iii) Compile the package.
+iv) Use this package to find area and perimeter of different shapes as chosen by the user.
