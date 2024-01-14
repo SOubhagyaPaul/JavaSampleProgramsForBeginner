@@ -1,0 +1,30 @@
+1. Write a Java program to pass the string “Have a nice day!” from the command line, and
+display each word in a new line. Use proper import statement for this program.
+2. Write a Java class called CountAndPrintArgs to print the number of arguments passed on
+the command-line as well as the 1st letter of the arguments. For example, if the command
+line arguments are: “Mango Cucumber Apple” then the output will be
+No. of arguments – 3 MCA
+Write a main method to test the class.
+3. Write a program that takes a String from the user on the command-line and print it in
+reverse.
+“This is a test” must be printed as: “test a is This”.
+4. Write a program to accept a string from the user and find out the following statistics:
+
+(a) Count of uppercase character
+(b) Count of lowercase character
+(c) Count of digits
+(d) Count of spaces
+
+5. Write a Java class called ArrayExample to declare an array of String objects called
+Products of the size 10, assign values to each element while declarations and print and
+sort them.
+6. Write a method (not the entire application) called CountVowels, which takes the input
+arguments as character and checks whether it is a vowel; increment the instance variable
+called vCnt by 1.
+7. Write a program to determine if a string has all Unique Characters.[remove white space]
+Given a string, determine if the string has all unique characters.
+Examples :
+Input: ab cd 10jk
+Output: true
+Input: hutg9mnd!nk9
+Output: false
