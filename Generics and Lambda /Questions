@@ -1,0 +1,19 @@
+1. Design the Stack Using Generic Class that can contain any type of data. Implement the insertion,
+deletion, peek function.
+2. Design the Queue Using Generic Class that can contain any type of data. Implement the
+insertion, deletion methods.
+3. Write a Generic Method that can perform the sorting of any type of data.
+4. Write a generic method that computes the Second minimum and Second maximum elements of an array
+of type T and returns a pair containing the minimum and maximum value.
+5. Write the following methods that return a lambda expression performing a specified action:
+isOdd(): The lambda expression must return true if a number is odd or false if it is even.
+isPrime(): The lambda expression must return true if a number is prime or false if it is composite.
+isPalindrome(): The lambda expression must return true if a number is a palindrome or false if it is not.
+6. Write a methods [double operation(double a, double b)]; ] that return a lambda expression implement a
+calculator perform Addition, Subtraction, Division, Multiplication operation.
+7. The Ceasar cipher is a basic encryption technique used by Julius Ceasar to securely communicate with
+his generals. Each letter is replaced by another letter N position down the English alphabet. For
+example, for a rotation of 5, the letter 'c' would be replaced by an 'h'. In case of a 'z', the alphabet rotates
+and it is transformed into a 'd'.Write a methods that return a lambda expression implement a decoder for
+the Ceasar cipher where N = 5.
+8. Write a program to create a thread using a lambda expression.
